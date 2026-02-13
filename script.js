@@ -1,7 +1,7 @@
-// script.js
 const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
 const message = document.getElementById('message');
+const herImage = document.getElementById('herImage');
 
 const loveMessages = [
     "Buri gihe nkubonye umutima wanjye urishima 💓",
@@ -15,23 +15,23 @@ const loveMessages = [
     "With you, every day feels like a dream come true 🌈",
     "Being with you feels like home 🏡",
     "Uri urumuri rutazima mu buzima bwanjye ✨"
-    
-
 ];
 
 yesBtn.addEventListener('click', () => {
-    message.textContent = "You just made me the happiest person alive, Denise! 💞 Ngusezeranyije ko buri mwanya turi kumwe kizaba ari igihe cyihariye kandi kitazibagirana. Wampa amahirwe yo kukwitaho iteka ryose?";
+    message.textContent = "You just made me the happiest person alive, Friend From Heaven! 💞 Ngusezeranyije ko buri igihe tuzaba turi kumwe kizaba ari igihe cyihariye kandi kitazibagirana!!!   ESE WAMPA AMAHIRWE YO KUKWITAHO ITEKA RYOSE?";
+
+    // Show her image
+    herImage.style.display = "block";
 
     // Create hearts
     const heartContainer = document.getElementById('heartContainer');
     for (let i = 0; i < 30; i++) {
         const heart = document.createElement('div');
         heart.className = 'heart';
-        heart.style.left = Math.random() * 80 + '%';  // random horizontal position
-        heart.style.animationDuration = 1.5 + Math.random() * 1.5 + 's';  // random speed
+        heart.style.left = Math.random() * 80 + '%';
+        heart.style.animationDuration = 1.5 + Math.random() * 1.5 + 's';
         heartContainer.appendChild(heart);
 
-        // Remove heart after animation
         heart.addEventListener('animationend', () => {
             heart.remove();
         });
@@ -39,25 +39,6 @@ yesBtn.addEventListener('click', () => {
 });
 
 noBtn.addEventListener('click', () => {
-    // Show a random love message every time she clicks no
     const randomIndex = Math.floor(Math.random() * loveMessages.length);
     message.textContent = loveMessages[randomIndex];
-});
-
-yesBtn.addEventListener('click', () => {
-    message.textContent = "You just made me the happiest person alive, Denise! 💞 Ngusezeranyije ko buri mwanya turi kumwe kizaba ari igihe cyihariye kandi kitazibagirana. Wampa amahirwe yo kukwitaho iteka ryose?";
-    // Create hearts
-    const heartContainer = document.getElementById('heartContainer');
-    for (let i = 0; i < 30; i++) {
-        const heart = document.createElement('div');
-        heart.className = 'heart';
-        heart.style.left = Math.random() * 80 + '%';  // random horizontal position
-        heart.style.animationDuration = 1.5 + Math.random() * 1.5 + 's';  // random speed
-        heartContainer.appendChild(heart);
-
-        // Remove heart after animation
-        heart.addEventListener('animationend', () => {
-            heart.remove();
-        });
-    }
 });
